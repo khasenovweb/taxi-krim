@@ -1,0 +1,108 @@
+{% set title = 'Главная' %}
+
+{% extends 'layouts/_main.html' %}
+
+{% block content %}
+
+<!-- main -->
+<div class="main">
+	<div class="container">
+		<h1 class="main__title">Междугороднее такси <br> <span>по Крыму</span></h1>
+		<div class="main__steps">
+			<div class="main__step">
+				<div class="main__step__head">
+					<div class="main__step__title">Маршрут</div>
+					<div class="main__step__line"></div>
+				</div>
+				<div class="main__step__input">
+					<input type="text" placeholder="Откуда">
+				</div>
+				<div class="main__step__input">
+					<input type="text" placeholder="Куда">
+				</div>
+			</div>
+			<div class="main__step">
+				<div class="main__step__head">
+					<div class="main__step__title">Дата поездки</div>
+					<div class="main__step__line"></div>
+				</div>
+				<div class="main__step__input">
+					<input type="date" placeholder="Откуда">
+				</div>
+			</div>
+			<div class="main__step">
+				<div class="main__step__head">
+					<div class="main__step__title">Тариф</div>
+					<div class="main__step__line"></div>
+				</div>
+				<div class="main__step__tarifs__wrapper">
+					<div class="main__step__tarifs">
+						<!-- main__step__tarif -->
+						<label for="tarif-1" class="main__step__tarif">
+							<input name="tarif" id="tarif-1" type="radio" class="main__step__tarif__input" checked>
+							<span class="main__step__tarif__box">
+								<img src="img/tarif-1.png" alt="">
+								<span class="main__step__tarif__box__title">Эконом</span>
+							</span>
+						</label>
+						<!--END main__step__tarif -->
+						<!-- main__step__tarif -->
+						<label for="tarif-2" class="main__step__tarif">
+							<input name="tarif" id="tarif-2" type="radio" class="main__step__tarif__input">
+							<span class="main__step__tarif__box">
+								<img src="img/tarif-2.png" alt="">
+								<span class="main__step__tarif__box__title">Стандарт</span>
+							</span>
+						</label>
+						<!--END main__step__tarif -->
+						<!-- main__step__tarif -->
+						<label for="tarif-3" class="main__step__tarif">
+							<input name="tarif" id="tarif-3" type="radio" class="main__step__tarif__input">
+							<span class="main__step__tarif__box">
+								<img src="img/tarif-3.png" alt="">
+								<span class="main__step__tarif__box__title">Комфорт</span>
+							</span>
+						</label>
+						<!--END main__step__tarif -->
+						<!-- main__step__tarif -->
+						<label for="tarif-4" class="main__step__tarif">
+							<input name="tarif" id="tarif-4" type="radio" class="main__step__tarif__input">
+							<span class="main__step__tarif__box">
+								<img src="img/tarif-4.png" alt="">
+								<span class="main__step__tarif__box__title">Минивен</span>
+							</span>
+						</label>
+						<!--END main__step__tarif -->
+					</div>
+				</div>
+			</div>
+			<div class="main__step">
+				<div class="main__step__head">
+					<div class="main__step__title">Стоимость</div>
+					<div class="main__step__line"></div>
+				</div>
+				<div class="main__step__price">
+					<span class="main__step__price__num">2 534</span>
+					<img src="img/ruble.svg" alt="">
+				</div>
+			</div>
+			<div class="main__step">
+				<div class="main__step__head">
+					<div class="main__step__title">Ваши контакты</div>
+					<div class="main__step__line"></div>
+				</div>
+				<div class="main__step__input">
+					<input type="text" placeholder="Ваше имя">
+				</div>
+				<div class="main__step__input">
+					<input type="text" placeholder="Ваш номер телефона">
+				</div>
+				<button class="btn">Забронировать</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--END main -->
+
+{% endblock %}
