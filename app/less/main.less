@@ -9,6 +9,20 @@
 	color: @black;
 	outline: none;
 }
+::selection {
+	background-color: @yellow;
+}
+h1 {
+	font-family: 'Nunito', sans-serif;
+}
+input, select {
+	font-family: 'Nunito', !important;
+}
+input {
+	&:focus {
+		border-color: @yellow !important;
+	}
+}
 .container {
 	max-width: 100%;
 	padding: 0 15px;
@@ -73,22 +87,25 @@
 	height: 1px;
 	//width: 100%;
 	flex-grow: 1;
-	background-color: lighten(@black, 50%);
+	background-color: lighten(@black, 75%);
 	margin-left: 15px;
 	margin-bottom: -2px;
 }
-input {
+input[type="text"] {
 	border: none;
 	padding: 16px 24px;
 	border-radius: 10px;
-	box-shadow: 0px 4px 19px rgba(0, 0, 0, 0.16);
+	//box-shadow: 0px 4px 19px rgba(0, 0, 0, 0.16);
 	max-width: 100%;
 	width: 100%;
+	border: 1px solid lighten(@black, 70%);
 }
 .main__step__tarifs__wrapper {
 	overflow-x: auto;
-	margin: -30px;
-	padding: 30px;
+	//margin: -30px;
+	//padding: 30px;
+	padding-bottom: 10px;
+	margin-bottom: -10px;
 }
 .main__step__tarifs {
 	display: grid;
@@ -98,18 +115,20 @@ input {
 }
 .main__step__tarif {
 	&:last-child {
-		margin-right: 30px;
+		//margin-right: 30px;
 	}
 }
 .main__step__tarif__box {
-	box-shadow: 0px 4px 19px rgba(0, 0, 0, 0.16);
+	//box-shadow: 0px 4px 19px rgba(0, 0, 0, 0.16);
 	border-radius: 10px;
+	border: 1px solid lighten(@black, 70%);
 	display: block;	
 	display: flex;	
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: flex-start;
-	padding: 12px 16px;	
+	padding: 12px 16px;
+	cursor: pointer;
 	//max-width: 126px;
 }
 .main__step__tarif__box__title {
@@ -120,7 +139,8 @@ input {
 	display: none;
 	&:checked + .main__step__tarif__box {
 		//border:  2px solid @yellow;
-		box-shadow: inset 0px 0px 0px 2px @yellow;
+		box-shadow: inset 0px 0px 0px 1px @yellow;
+		border: 1px solid @yellow;
 	}
 }
 .main__step__price {
@@ -143,4 +163,14 @@ input {
 ::-webkit-scrollbar {
   width: 0px;
   background: rgba(255, 255, 255, 0.0);
+}
+
+.ui.selection.active.dropdown,.ui.selection.active.dropdown .menu {
+	border-color: @yellow !important;
+}
+body ::-webkit-scrollbar-track {
+	background: none;
+}
+body ::-webkit-scrollbar {
+	height: 5px;
 }

@@ -7,6 +7,8 @@
     <title>Междугороднее такси по Крыму</title>
     <link rel="stylesheet" href="css/jquery.fancybox.min.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/datepicker.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
 
@@ -28,23 +30,50 @@
             <div class="main__steps">
                 <div class="main__step">
                     <div class="main__step__head">
-                        <div class="main__step__title">Маршрут</div>
+                        <div class="main__step__title">Откуда</div>
                         <div class="main__step__line"></div>
                     </div>
                     <div class="main__step__input">
-                        <input type="text" placeholder="Откуда">
-                    </div>
-                    <div class="main__step__input">
-                        <input type="text" placeholder="Куда">
+                        <div class="ui large form">
+                            <div class="field">
+                                <select class="ui search dropdown">
+                                    <option value="">Откуда</option>
+                                    <option value="AF">Симферополь ЖД Вокзал</option>
+                                    <option value="AF">Симферополь Аэропорт</option>
+                                    <option value="AF">Алупка</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="main__step">
                     <div class="main__step__head">
-                        <div class="main__step__title">Дата поездки</div>
+                        <div class="main__step__title">Куда</div>
                         <div class="main__step__line"></div>
                     </div>
                     <div class="main__step__input">
-                        <input type="date" placeholder="Откуда">
+                        <div class="ui large form">
+                            <div class="field">
+                                <select class="ui search dropdown">
+                                    <option value="">Откуда</option>
+                                    <option value="AF">Симферополь</option>
+                                    <option value="AF">Алупка</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main__step">
+                    <div class="main__step__head">
+                        <div class="main__step__title">Дата и время подачи машины</div>
+                        <div class="main__step__line"></div>
+                    </div>
+                    <div class="main__step__input">
+                        <div class="ui large form">
+                            <div class="field">
+                                <input data-input="date" type="text">
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="main__step">
@@ -109,10 +138,18 @@
                         <div class="main__step__line"></div>
                     </div>
                     <div class="main__step__input">
-                        <input type="text" placeholder="Ваше имя">
+                        <div class="ui large form">
+                            <div class="field">
+                                <input type="text" placeholder="Ваше имя">
+                            </div>
+                        </div>
                     </div>
                     <div class="main__step__input">
-                        <input type="text" placeholder="Ваш номер телефона">
+                        <div class="ui large form">
+                            <div class="field">
+                                <input type="text" placeholder="Ваш телефон">
+                            </div>
+                        </div>
                     </div>
                     <button class="btn">Забронировать</button>
                 </div>
@@ -123,6 +160,8 @@
     <script src="js/jquery.js"></script>
     <script src="js/jquery.fancybox.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
+    <script src="js/datepicker.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 
