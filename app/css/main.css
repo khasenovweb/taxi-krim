@@ -270,3 +270,9 @@ body ::-webkit-scrollbar-track {
 body ::-webkit-scrollbar {
   height: 5px;
 }
+@media screen and (min-width: 900px) {
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+}
