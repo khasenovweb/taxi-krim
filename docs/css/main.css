@@ -126,6 +126,10 @@ input:focus {
 }
 .head {
   background-color: #313133;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 3;
 }
 .head .container {
   padding: 10px 15px;
@@ -147,6 +151,7 @@ input:focus {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 50%;
+  cursor: pointer;
 }
 .main {
   padding: 20px 0;
@@ -269,4 +274,83 @@ body ::-webkit-scrollbar-track {
 }
 body ::-webkit-scrollbar {
   height: 5px;
+}
+#phone-error {
+  color: red;
+  font-weight: 500;
+  font-size: 12px;
+  margin-top: 10px;
+}
+input.error {
+  border-color: red !important;
+}
+.footer {
+  background-color: #f1f1f2;
+  padding: 30px 0;
+  margin-top: 30px;
+}
+.footer p {
+  opacity: 0.7;
+}
+.footer .container {
+  padding: 0 30px;
+}
+.footer__politics {
+  color: #F8CE2A;
+  text-decoration: underline;
+}
+.footer__politics:hover {
+  color: #F8CE2A;
+}
+.footer__phone {
+  font-size: 24px;
+  color: #F8CE2A;
+}
+.footer__phone:hover {
+  color: #F8CE2A;
+}
+.footer__social {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+}
+.footer__social a {
+  margin-right: 12px;
+}
+.order__send__wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 4;
+  display: none;
+}
+.order__send {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  width: 250px;
+}
+.order__send .btn {
+  margin: 0 auto;
+  display: block;
+  margin-top: 15px;
+}
+.order__send__message {
+  text-align: center;
+}
+@media screen and (min-width: 900px) {
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
 }

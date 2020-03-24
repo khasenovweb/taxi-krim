@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="css/datepicker.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
 	<link rel="stylesheet" href="css/main.css">
+	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 </head>
 <body>
 	<!-- head -->
@@ -24,12 +25,48 @@
 	{% block content %}
 		
 	{% endblock %}
-	
+	<div class="footer">
+		<div class="container">
+			<p>Заказать такси можно позвонив по номеру телефона:</p>
+			<a href="tel:+7 (978) 068 68 87" class="footer__phone">+7 (978) 068 68 87</a>
+			<br>
+			<br>
+			<p>Следите за нами в социальных сетях:</p>
+			<div class="footer__social">
+				<a href="/">
+					<img src="img/fb.svg" alt="">
+				</a>
+				<a href="/">
+					<img src="img/vk.svg" alt="">
+				</a>
+				<a href="/">
+					<img src="img/ok.svg" alt="">
+				</a>
+				<a href="/">
+					<img src="img/ig.svg" alt="">
+				</a>
+			</div>
+			<br>
+			<p>*Данный сайт носит исключительно справочный характер, и ни при каких условиях информационные материалы и цены, размещенные на сайте, не являются публичной офертой, определяемой положениями Статей 435 и 437 Гражданского кодекса РФ. Информационный сервис. Услуги оказываются перевозчиками.</p>
+			<p>*Используя данный сайт, вы даете согласие на использование файлов cookie, данных об IP-адресе и местоположении, помогающих нам сделать его удобнее для вас.</p>
+			<a href="" class="footer__politics">Политика конфиденциальности и обработки персональных данных</a>
+		</div>	
+	</div>
+
+	<div data-modal="order-send" class="order__send__wrapper">
+		<div class="order__send">
+			<div class="order__send__message">Вы успешно забронировали такси!</div>
+			<button data-click="order-send-hide" class="btn">Закрыть</button>
+		</div>
+	</div>
+
 	<script src="js/jquery.js"></script>
 	<script src="js/jquery.fancybox.min.js"></script>
 	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/datepicker.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+	<script src="js/mask.js"></script>
+	<script src="js/validate.js"></script>
 	<script src="js/main.js"></script>
 </body>
 </html>
