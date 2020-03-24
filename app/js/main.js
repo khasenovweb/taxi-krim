@@ -46,7 +46,7 @@
         var to = $('[data-send="to"]').val();
         var tarif = $('input[name="tarif"]:checked').val();
         $.ajax({
-             url: 'http://hasenorf.beget.tech/route.php',
+             url: 'https://khasenov.ru/taxi-krim/route.php',
              type: 'post',
              data: {from: from, to:to, tarif: tarif},
              beforeSend: function(){
@@ -59,7 +59,7 @@
         });
 
         $.ajax({
-             url: 'http://hasenorf.beget.tech/route-2.php',
+             url: 'https://khasenov.ru/taxi-krim/route-2.php',
              type: 'post',
              data: {from: from, to:to, tarif: tarif},
              dataType: "JSON",
