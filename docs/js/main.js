@@ -53,7 +53,7 @@
                   $('body').css('opacity','0.5');
              },
              success: function(otvet){
-                 $('.main__step__price__num').text(otvet);
+                 $('.main__step__price__num').text(otvet.replace(/(\d{1,3}(?=(?:\d\d\d)+(?!\d)))/g, "$1" + ' '));
                  $('body').css('opacity','1');
              }
         });
