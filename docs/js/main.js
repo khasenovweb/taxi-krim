@@ -1,46 +1,83 @@
  $(document).ready(function(){
+
+    //Выбор даты телефон
  	$('input[data-input="date"]').datepicker({
         timepicker: true,
         dateFormat: 'd MM yyyy'
     });
+    //END Выбор даты телефон
 
-    $('input[data-input="date"]').on('change', function(){
-    	console.log($(this).val());
-    });
 
+    //Выбор городов
     $('select.dropdown').dropdown({
     	onChange: function(value, text, $selectedItem) {
     	      raschet();
     	    }
     });
+    //END Выбор городов
 
+
+    //Маска телефон
     $('input[data-mask="phone"]').mask('+7 (999) 999-9999');
+    //END Маска телефона
+    
 
+
+    
+    //Отправка заявок
+    function send() {
+        var from = $('[data-send="from"]').val();
+        var to = $('[data-send="to"]').val();
+        var tarif = $('input[name="tarif"]:checked').val();
+        var price = $('.main__step__price__num').text();
+        var date = $('[data-send="date"]').val();
+        var phone = $('[data-send="phone"]').val();
+
+        $.ajax({
+             url: 'https://khasenov.ru/taxi-krim/telegram.php',
+             type: 'post',
+             data: {from:from, to:to, tarif:tarif, price:price, date:date, phone:phone},
+             dataType: 'json',
+             success: function(){
+                 $('[data-modal="order-send"]').show();
+             }
+        });
+    }
+    //END Отправка заявок
+
+
+
+
+    //Валидация формы
     $.validator.addMethod("phone", function(value) {
         return value.replace(/\D+/g,"").length >= 11;
     }, 'Введите номер телефона полностью');
 
-    $.validator.addMethod("to", function(value) {
-        return value != $('[data-send="from"]').val();
-    }, 'Города должны отличаться');
-
-
     $('form[data-validate]').validate({
         rules: {
-            phone: "phone",
-            to: "to"
+            phone: "phone"
         },
         submitHandler: function() {
            //Здесь должна быть AJAX отправка формы
-
+           send();
         }
     });
+    //END Валидация формы
 
 
+
+
+
+    //Закрыть модальное окно
     $('[data-click="order-send-hide"]').click(function(){
         $('[data-modal="order-send"]').hide();
     });
+    //END Закрыть модальное окно
 
+
+
+
+    //Расчет стоимости
     function raschet() {
         var from = $('[data-send="from"]').val();
         var to = $('[data-send="to"]').val();
@@ -76,7 +113,6 @@
                     function init(){
                         var map = new ymaps.Map("map", {center: [55.76, 37.64], zoom: 7});
                         var pointsArray = polyline_decode(otvet2);
-                        console.log(otvet2);
                         var polylineObject = new ymaps.Polyline(pointsArray, {}, { strokeColor: '#ff0000', strokeWidth: 5, opacity: 0.8 } );
                         map.geoObjects.add(polylineObject);
                         map.setBounds(map.geoObjects.getBounds());
@@ -139,16 +175,27 @@
 
 
     }
+    //END Расчет стоимости
+
+
+
+
 
     $('input[name="tarif"]').on('change', function(){
         raschet(); 
     });
 
 
+
+
+
     ymaps.ready(init);
     function init(){
         var map = new ymaps.Map("map", {center: [45.375088, 34.517746], zoom: 7});
     }
+
+
+
 
 
     $('.head__hamburger').click(function(){
