@@ -150,4 +150,10 @@
         var map = new ymaps.Map("map", {center: [45.375088, 34.517746], zoom: 7});
     }
 
+
+    $('.head__hamburger').click(function(){
+        $('.mobile__nav__wrapper').toggleClass('show');
+        $(this).toggleClass('active');
+    });
+
  });

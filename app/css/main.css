@@ -114,11 +114,15 @@ h1 {
   font-family: 'Nunito', sans-serif;
 }
 input,
-select {
+select,
+button {
   font-family: 'Nunito' !important;
 }
 input:focus {
   border-color: #F8CE2A !important;
+}
+body {
+  padding-top: 60px;
 }
 .container {
   max-width: 100%;
@@ -126,9 +130,10 @@ input:focus {
 }
 .head {
   background-color: #313133;
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 3;
 }
 .head .container {
@@ -152,6 +157,10 @@ input:focus {
   background-position: center;
   background-size: 50%;
   cursor: pointer;
+}
+.head__hamburger.active {
+  background-image: url(../img/hamburger_active.svg);
+  background-size: 38%;
 }
 .main {
   padding: 20px 0;
@@ -347,6 +356,40 @@ input.error {
 }
 .order__send__message {
   text-align: center;
+}
+.mobile__nav__wrapper {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  -webkit-transform: translateY(-100%);
+      -ms-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+.mobile__nav__wrapper .container {
+  padding: 0;
+}
+.mobile__nav__wrapper.show {
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+}
+.mobile__nav {
+  background-color: #fff;
+  box-shadow: 0px 4px 19px rgba(0, 0, 0, 0.16);
+}
+.mobile__nav__list {
+  list-style-type: none;
+}
+.mobile__nav__list a {
+  padding: 20px 30px;
+  display: block;
+}
+.order-taxi a {
+  background-color: #F8CE2A;
+  color: white;
 }
 @media screen and (min-width: 900px) {
   .container {
