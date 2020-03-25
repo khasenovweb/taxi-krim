@@ -391,9 +391,16 @@ input.error {
   background-color: #F8CE2A;
   color: white;
 }
+#map {
+  width: 100%;
+  height: 200px;
+}
 @media screen and (min-width: 900px) {
   .container {
     max-width: 900px;
     margin: 0 auto;
+  }
+  #map {
+    height: 400px;
   }
 }
